@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Thanks for your Submission</title>
+	<style>
+		body {background-color: #9bcae3; font-family: "proxima nova", sans-serif; color: #131718; width: 670px; margin: 0 auto; padding: 20px; font-size: 18px;}
+		input {background-color: #6fb3c1!important; display: block; margin: 10px 0; padding: 6px 0; font-size: 14px;}
+		input[type="checkbox"] {display: inline;}
+		input[type="text"], input[type="password"], input[type="email"], textarea {color: #fff; min-width: 90%}
+		a {color:#fff;}
+		#test-form {margin: auto;}
+		#consent_tag_target {color: darkblue; width: 100%; text-align: center; margin: 6px}
+		.indentpar {display: inline; }
+		.indented { margin-left: 32px; margin-top: -28px; line-height: 22px;}
+		#cert-url-dest { margin-top: 22px; padding-top: 22px; border-top: 1px solid black;}
+		.cert-url-dest { margin-bottom: 12px; padding-bottom: 2px; font-size: 14px; text-align: center;}
+		[data-tf-element-role=""] { border: 2px solid #9bcae3; }
+		[data-tf-element-role="offer"] { border: 2px solid #9bcae3; }
+		[data-tf-element-role="consent-language"] { border: 2px solid #9bcae3; }
+		h1, h3, h5 { text-align: center; line-height: 10px;}
+  </style>
+  <style>
+    #test-form {
+      width: 80%;
+    }
+  </style>
+</head>
+<body>
+	<h1>
+		Thanks
+	</h1>
+  <div id="cert-url-dest" class="cert-url-dest"></div>
+	<div class="cert-url-dest">
+		<a href="#" id="cert-url-link-dest" rel="noreferrer" target="_blank"></a>
+	</div>
+
+	<script type="text/javascript">
+    function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    var cert = getParameterByName('cert_id');
+    var certificateUrl = window.atob(cert);
+    if (cert) {
+			document.getElementById("cert-url-dest").innerHTML = certificateUrl;
+		  document.getElementById("cert-url-link-dest").href = certificateUrl;
+			document.getElementById("cert-url-link-dest").innerHTML = "Visit Cert";
+    }
+	</script>
+</body>
+</html>

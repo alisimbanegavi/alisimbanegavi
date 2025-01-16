@@ -211,7 +211,6 @@
         </div>
         <BR />
         <div style="text-align: left; display: inline-block;">
-          <button onclick="window.location.href='tf_verify_index.html'; return false;">Cancel</button>
         </div>
         <div style="text-align: right; display: inline-block; width: 80%">
           <button type="reset">Reset form</button>
@@ -227,7 +226,7 @@
   </div>
 
   <script type="text/javascript">
-    var environment = getUrlParam('env', 'api.trustedform.com');
+    var environment = getUrlParam('env', 'api.trustedform-dev.com');
     document.getElementById("env_display").textContent = environment;
     // TRUSTEDFORM SCRIPT
     (function () {
