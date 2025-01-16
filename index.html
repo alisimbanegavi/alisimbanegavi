@@ -1,2 +1,267 @@
-<script src="https://static.truecall.com/c/olfex0opc0pbimbkidbtj9jcp49lk0zu5n1p.js"></script>
-<script src="https://static.truecall.com/s/truecall.js"></script>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>TF Explicit One to One Consent</title>
+  <style>
+    body {
+      background-color: #9bcae3;
+      font-family: "proxima nova", sans-serif;
+      color: #131718;
+      width: 670px;
+      margin: 0 auto;
+      padding: 20px;
+      font-size: 18px;
+    }
+
+    input {
+      background-color: #6fb3c1 !important;
+      display: block;
+      margin: 10px 0;
+      padding: 6px 0;
+      font-size: 14px;
+    }
+
+    input[type="checkbox"] {
+      display: inline;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    textarea {
+      color: #fff;
+      min-width: 90%
+    }
+
+    a {
+      color: #fff;
+    }
+
+    #test-form {
+      margin: auto;
+    }
+
+    #consent_tag_target {
+      color: darkblue;
+      width: 100%;
+      text-align: center;
+      margin: 6px
+    }
+
+    .indentpar {
+      display: inline;
+    }
+
+    .indented {
+      margin-left: 32px;
+      margin-top: -28px;
+      line-height: 22px;
+    }
+
+    #cert-url-dest {
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px solid black;
+    }
+
+    .cert-url-dest {
+      margin-bottom: 12px;
+      padding-bottom: 2px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    [data-tf-element-role=""] {
+      border: 2px solid #9bcae3;
+    }
+
+    [data-tf-element-role="offer"] {
+      border: 2px solid #9bcae3;
+    }
+
+    [data-tf-element-role="offer"]:hover {
+      border: 2px solid yellow;
+    }
+
+    [data-tf-element-role="consent-language"] {
+      border: 2px solid #9bcae3;
+    }
+
+    [data-tf-element-role="consent-language"]:hover {
+      border: 2px solid greenyellow;
+    }
+
+    .consent-hilight>* [data-tf-element-role]:not([data-tf-element-role="offer"]):not([data-tf-element-role="consent-language"]) {
+      background-color: inherit;
+      box-shadow: 0 0 1px 1px #8a2be2;
+    }
+
+    .consent-hilight>[data-tf-element-role]:not([data-tf-element-role="offer"]):not([data-tf-element-role="consent-language"]) {
+      background-color: inherit;
+      box-shadow: 0 0 1px 1px #8a2be2;
+    }
+
+    [data-tf-element-role]:not([data-tf-element-role="offer"]):not([data-tf-element-role="consent-language"]):hover {
+      background-color: yellow;
+    }
+
+    h1,
+    h3,
+    h5 {
+      text-align: center;
+      line-height: 10px;
+    }
+  </style>
+
+  <script src="https://static.truecall.com/c/olfex0opc0pbimbkidbtj9jcp49lk0zu5n1p.js"></script>
+  <script src="https://static.truecall.com/s/truecall.js"></script>
+  <script type="text/javascript">
+    // ENVIRONMENT DETECTION
+    function getUrlVars() {
+      var vars = {};
+      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+        vars[key] = value;
+      });
+      return vars;
+    }
+    function getUrlParam(parameter, defaultvalue) {
+      var urlparameter = defaultvalue;
+      if (window.location.href.indexOf(parameter) > -1) {
+        urlparameter = getUrlVars()[parameter];
+      }
+      return urlparameter;
+    }
+
+    document.addEventListener("mouseover", (event) => {
+      var docDump = document.getElementById("consent_tag_target");
+      if (event.target.hasAttribute("data-tf-element-role")) {
+        var newText = event.target.getAttribute("data-tf-element-role");
+        event.target.classList.add("consent-hilight");
+        docDump.innerHTML = "Consent Tag: " + newText;
+      } else {
+        docDump.innerHTML = " ";
+      }
+    });
+
+    document.addEventListener("mouseout", (event) => {
+      if (event.target.hasAttribute("data-tf-element-role")) {
+        event.target.classList.remove("consent-hilight");
+      }
+    });
+
+  </script>
+  <style>
+    #test-form {
+      width: 80%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="test-form">
+    <h1>Trustedform Verify</h1>
+    <h3>Explicit One to One Consent</h3>
+    <h5 id="env_display">production</h5>
+    <form id="explicit-consent" method="get" autocomplete="on" name="strongbad" action="thanks.html">
+      <fieldset>
+        <legend>Contact Info</legend>
+        <table width="100%">
+          <tr>
+            <td width="50%">
+              <label for="firstName">First Name</label>
+              <input type="text" name="first_name" id="firstName" placeholder="First name" autocomplete="given-name">
+            </td>
+            <td>
+              <label for="lastName">Last Name</label>
+              <input type="text" name="last_name" id="lastName" placeholder="Last name" autocomplete="family-name">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="frmEmailA">Email</label>
+              <input type="text" type="email" name="email" id="frmEmailA" placeholder="name@example.com"
+                autocomplete="email">
+            </td>
+            <td>
+              <label for="frmPhoneNumA">Phone</label>
+              <input type="text" type="tel" name="phone" id="frmPhoneNumA" placeholder="+1-650-450-1212"
+                autocomplete="tel">
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+      <div data-tf-element-role="offer">
+        <input id="consent-check" type="checkbox" value="terms" data-tf-element-role="consent-opt-in" class="indentpar">
+        <div class="indented" data-tf-element-role="consent-language">
+          <span data-tf-element-role="consent-grantor-name">I</span>
+          hereby
+          <span data-tf-element-role="consent-grantor-waived-regulated-technologies">
+            consent to receive autodialed and/or pre-recorded telemarketing calls
+          </span> from or on behalf of
+          <span data-tf-element-role="consent-advertiser-name">Sample Company</span>
+          <span data-tf-element-role="contact-method">at
+            <span data-tf-element-role="consent-grantor-phone">the telephone number I provided above</span>,
+            including my wireless number
+          </span>, if applicable.
+          <span data-tf-element-role="consent-grantor-waived-purchase-condition">
+            I understand that consent is not a condition of purchase
+          </span>.
+        </div>
+        <BR />
+        <div style="text-align: left; display: inline-block;">
+          <button onclick="window.location.href='tf_verify_index.html'; return false;">Cancel</button>
+        </div>
+        <div style="text-align: right; display: inline-block; width: 80%">
+          <button type="reset">Reset form</button>
+          <button data-tf-element-role="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+    <div id="consent_tag_target"></div>
+  </div>
+  <div id="cert-url-dest" class="cert-url-dest"></div>
+  <div class="cert-url-dest">
+    <a href="#" id="cert-url-link-dest" rel="noreferrer" target="_blank"></a>
+  </div>
+
+  <script type="text/javascript">
+    var environment = getUrlParam('env', 'api.trustedform.com');
+    document.getElementById("env_display").textContent = environment;
+    // TRUSTEDFORM SCRIPT
+    (function () {
+      var field = 'xxTrustedFormCertUrl';
+      var provideReferrer = false;
+      var tf = document.createElement('script');
+      tf.type = 'text/javascript'; tf.async = true;
+      tf.src = 'http' + ('https:' == document.location.protocol ? 's' : '') +
+        '://' + environment + '/trustedform.js?use_tagged_consent=true&provide_referrer=' + escape(provideReferrer) + '&field=' + escape(field) + '&l=' + new Date().getTime() + Math.random();
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
+    }
+    )();
+  </script>
+  <noscript>
+    <img src="http://api.trustedform.com/ns.gif" />
+  </noscript>
+  <script type="text/javascript">
+    // callback to log certificate url to console
+    function trustedFormCertUrlCallback(certificateUrl) {
+      console.log(certificateUrl);
+      document.getElementById("cert-url-dest").innerHTML = certificateUrl;
+      document.getElementById("cert-url-link-dest").href = certificateUrl;
+      document.getElementById("cert-url-link-dest").innerHTML = "Link";
+      document.strongbad.action = "thanks.html?cert_id=" + window.btoa(certificateUrl);
+    }
+    function handleSubmit(event) {
+      if (!confirm("cancel me to stay on the page")) {
+        event.preventDefault();
+      }
+    }
+    const form2 = document.getElementById("explicit-consent");
+    form2.addEventListener("submit", handleSubmit);
+
+  </script>
+</body>
+
+</html>
