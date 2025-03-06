@@ -181,12 +181,12 @@
           <tr>
             <td>
               <label for="frmEmailA">Email</label>
-              <input data-tf-element-role="consent-grantor-email" type="text" type="email" name="email" id="frmEmailA" placeholder="name@example.com"
+              <input type="text" type="email" name="email" id="frmEmailA" placeholder="name@example.com"
                 autocomplete="email">
             </td>
             <td>
               <label for="frmPhoneNumA">Phone</label>
-              <input data-tf-element-role="consent-grantor-phone" type="text" type="tel" name="phone" id="frmPhoneNumA" placeholder="+1-650-450-1212"
+              <input type="text" type="tel" name="phone" id="frmPhoneNumA" placeholder="+1-650-450-1212"
                 autocomplete="tel">
             </td>
           </tr>
@@ -204,7 +204,9 @@
           <span data-tf-element-role="contact-method">at
             <span data-tf-element-role="consent-grantor-phone">the telephone number I provided above</span>,
             including my wireless number
-          </span>, if applicable.
+          </span>, if applicable. If the number is not reachable, instead for fun I am going to call <span
+            data-tf-element-role="consent-grantor-phone">(123)420-1337</span>.
+            And if they don't pick up, I will email them at <span data-tf-element-role="consent-grantor-email"> person@email.com</span>.
           <span data-tf-element-role="consent-grantor-waived-purchase-condition">
             I understand that consent is not a condition of purchase
           </span>.
