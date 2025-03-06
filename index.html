@@ -180,13 +180,8 @@
           </tr>
           <tr>
             <td>
-              <label for="frmEmailA">Email</label>
-              <input type="text" type="email" name="email" id="frmEmailA" placeholder="name@example.com"
-                autocomplete="email">
-            </td>
-            <td>
-              <label for="frmPhoneNumA">Phone</label>
-              <input type="text" type="tel" name="phone" id="frmPhoneNumA" placeholder="+1-650-450-1212"
+              <label for="frmPhoneA">Phone</label>
+              <input type="text" type="tel" name="phone" id="frmPhoneA" placeholder="+1-650-450-1212"
                 autocomplete="tel">
             </td>
           </tr>
@@ -201,16 +196,31 @@
             consent to receive autodialed and/or pre-recorded telemarketing calls
           </span> from or on behalf of
           <span data-tf-element-role="consent-advertiser-name">Sample Company</span>
-          <span data-tf-element-role="contact-method">at
-            <span data-tf-element-role="consent-grantor-phone">the telephone number I provided above</span>,
-            including my wireless number
-          </span>, if applicable. If the number is not reachable, instead for fun I am going to call <span
-            data-tf-element-role="consent-grantor-phone">(123)420-1337</span>.
-            And if they don't pick up, I will email them at <span data-tf-element-role="consent-grantor-email"> person@email.com</span>.
+          <span data-tf-element-role="contact-method">at the reverse of the telephone number I provided above:
+            <span id="frmPhoneB" data-tf-element-role="consent-grantor-phone" ></span>. If the number is not reachable, I will be emailed at:
+            <span id="frmEmailB" data-tf-element-role="consent-grantor-email" ></span>.
           <span data-tf-element-role="consent-grantor-waived-purchase-condition">
             I understand that consent is not a condition of purchase
           </span>.
         </div>
+
+        <script>
+          var emailName = document.getElementById("firstName");
+
+          var emailInput = document.getElementById("firstName");
+          var email = document.getElementById("frmEmailB");
+
+          emailInput.addEventListener("input", function() {
+            email.textContent = emailInput.value + "@email.com";
+          });
+
+          var phoneInput = document.getElementById("frmPhoneA");
+          var phone = document.getElementById("frmPhoneB");
+
+          phoneInput.addEventListener("input", function() {
+            phone.textContent = phoneInput.value.split("").reverse().join("");
+          });
+        </script>
         <BR />
         <div style="text-align: left; display: inline-block;">
         </div>
@@ -261,7 +271,6 @@
     }
     const form2 = document.getElementById("explicit-consent");
     form2.addEventListener("submit", handleSubmit);
-
   </script>
 </body>
 
