@@ -178,13 +178,6 @@
               <input type="text" name="last_name" id="lastName" placeholder="Last name" autocomplete="family-name">
             </td>
           </tr>
-          <tr>
-            <td>
-              <label for="frmPhoneA">Phone</label>
-              <input type="text" type="tel" name="phone" id="frmPhoneA" placeholder="+1-650-450-1212"
-                autocomplete="tel">
-            </td>
-          </tr>
         </table>
       </fieldset>
       <div data-tf-element-role="offer">
@@ -196,31 +189,13 @@
             consent to receive autodialed and/or pre-recorded telemarketing calls
           </span> from or on behalf of
           <span data-tf-element-role="consent-advertiser-name">Sample Company</span>
-          <span data-tf-element-role="contact-method">at the reverse of the telephone number I provided above:
-            <span id="frmPhoneB" data-tf-element-role="consent-grantor-phone" ></span>. If the number is not reachable, I will be emailed at:
-            <span id="frmEmailB" data-tf-element-role="consent-grantor-email" ></span>.
+          <span data-tf-element-role="contact-method">at the telephone number:
+            <span data-tf-element-role="consent-grantor-phone" >(123)420-9696</span>. If the number is not reachable, I will be emailed at:
+            <span data-tf-element-role="consent-grantor-email">person@email.com</span>.
           <span data-tf-element-role="consent-grantor-waived-purchase-condition">
             I understand that consent is not a condition of purchase
           </span>.
         </div>
-
-        <script>
-          var emailName = document.getElementById("firstName");
-
-          var emailInput = document.getElementById("firstName");
-          var email = document.getElementById("frmEmailB");
-
-          emailInput.addEventListener("input", function() {
-            email.textContent = emailInput.value + "@email.com";
-          });
-
-          var phoneInput = document.getElementById("frmPhoneA");
-          var phone = document.getElementById("frmPhoneB");
-
-          phoneInput.addEventListener("input", function() {
-            phone.textContent = phoneInput.value.split("").reverse().join("");
-          });
-        </script>
         <BR />
         <div style="text-align: left; display: inline-block;">
         </div>
