@@ -178,6 +178,18 @@
               <input type="text" name="last_name" id="lastName" placeholder="Last name" autocomplete="family-name">
             </td>
           </tr>
+          <tr>
+            <td>
+              <label for="frmEmailA">Email</label>
+              <input type="text" type="email" name="email" id="frmEmailA" placeholder="name@example.com"
+                autocomplete="email">
+            </td>
+            <td>
+              <label for="frmPhoneNumA">Phone</label>
+              <input type="text" type="tel" name="phone" id="frmPhoneNumA" placeholder="+1-650-450-1212"
+                autocomplete="tel">
+            </td>
+          </tr>
         </table>
       </fieldset>
       <div data-tf-element-role="offer">
@@ -189,8 +201,8 @@
 					<span data-tf-element-role="consent-grantor-name">I</span>
 					expressly consent to the companies selected above to send marketing/promotional messages
 					related to the product or service I am inquiring about to 
-                    <span data-tf-element-role="consent-grantor-email">joe@example.com</span>
-					or calling at <span data-tf-element-role="consent-grantor-phone">(631)555-1212</span>
+                    <span data-tf-element-role="consent-grantor-email" data-tf-sensitive=true>joe@example.com</span>
+					or calling at <span data-tf-element-role="consent-grantor-phone" data-tf-sensitive=true>(631)555-1212</span>
 						
 					<span data-tf-element-role="consent-grantor-waived-purchase-condition">
 						I understand that accepting this consent does not require me to obtain any good or service.
@@ -222,7 +234,7 @@
       var tf = document.createElement('script');
       tf.type = 'text/javascript'; tf.async = true;
       tf.src = 'http' + ('https:' == document.location.protocol ? 's' : '') +
-        '://' + environment + '/trustedform.js?use_tagged_consent=true&provide_referrer=' + escape(provideReferrer) + '&field=' + escape(field) + '&l=' + new Date().getTime() + Math.random();
+        '://' + environment + '/trustedform.js?use_tagged_consent=true&provide_referrer=' + escape(provideReferrer) + '&field=' + escape(field) + '&invert_field_sensitivity=true' + '&l=' + new Date().getTime() + Math.random();
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
     }
     )();
