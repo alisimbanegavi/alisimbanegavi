@@ -16,7 +16,7 @@
     }
 
     input {
-      background-color: #6fb3c1 !important;
+      background-color: #c595ff !important;
       display: block;
       margin: 10px 0;
       padding: 6px 0;
@@ -161,7 +161,7 @@
 
 <body>
   <div id="test-form">
-    <iframe src="https://s3.amazonaws.com/leadconduit_assets/all-the-things.html" width="1000" height="1000"></iframe>
+    <iframe src="https://activeprospect.github.io/trustedform.html?env=api.staging.trustedform.com" width="1500" height="1500"></iframe>
     <!-- <h1>Trustedform Verify</h1>
     <h3>Explicit One to One Consent</h3>
     <h5 id="env_display">production</h5>
@@ -224,22 +224,6 @@
   <div class="cert-url-dest">
     <a href="#" id="cert-url-link-dest" rel="noreferrer" target="_blank"></a>
   </div>
-
-  <script type="text/javascript">
-    var environment = getUrlParam('env', 'api.staging.trustedform.com');
-    document.getElementById("env_display").textContent = environment;
-    // TRUSTEDFORM SCRIPT
-    (function () {
-      var field = 'xxTrustedFormCertUrl';
-      var provideReferrer = false;
-      var tf = document.createElement('script');
-      tf.type = 'text/javascript'; tf.async = true;
-      tf.src = 'http' + ('https:' == document.location.protocol ? 's' : '') +
-        '://' + environment + '/trustedform.js?use_tagged_consent=true&provide_referrer=' + escape(provideReferrer) + '&field=' + escape(field) + '&invert_field_sensitivity=true' + '&l=' + new Date().getTime() + Math.random();
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
-    }
-    )();
-  </script>
   <noscript>
     <img src="http://api.trustedform.com/ns.gif" />
   </noscript>
@@ -260,6 +244,22 @@
     const form2 = document.getElementById("explicit-consent");
     form2.addEventListener("submit", handleSubmit);
   </script>
+  <!-- TrustedForm -->
+  <script type="text/javascript">
+    var environment = getUrlParam('env', 'api.staging.trustedform.com');
+    document.getElementById("env_display").textContent = environment;
+    // TRUSTEDFORM SCRIPT
+    (function () {
+      var field = 'xxTrustedFormCertUrl';
+      var provideReferrer = false;
+      var tf = document.createElement('script');
+      tf.type = 'text/javascript'; tf.async = true;
+      tf.src = 'http' + ('https:' == document.location.protocol ? 's' : '') +
+        '://' + environment + '/trustedform.js?use_tagged_consent=true&provide_referrer=' + escape(provideReferrer) + '&field=' + escape(field) + '&invert_field_sensitivity=true' + '&l=' + new Date().getTime() + Math.random();
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
+    }
+    )();
+  </script>
+  <!-- End TrustedForm -->
 </body>
-
 </html>
